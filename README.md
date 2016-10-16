@@ -1,4 +1,4 @@
-# Pict
+# Pict [![Build Status](https://travis-ci.org/jameshamann/pict.svg?branch=master)](https://travis-ci.org/jameshamann/pict)
 
 An Instagram Clone
 
