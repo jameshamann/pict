@@ -3,7 +3,7 @@ language: ruby
 rvm:
   - 2.3.1
 
-  services:
+services:
   - postgresql
 
 before_script:
