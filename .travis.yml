@@ -8,3 +8,6 @@ services:
 
 before_script:
   - psql -c 'create database pict_test;' -U postgres
+
+after_success:
+  - coveralls
