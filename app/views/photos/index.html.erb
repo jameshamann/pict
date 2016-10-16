@@ -4,8 +4,8 @@
 
 <h2>Share your experiences!</h2>
 
-<% if Photo.all.any? %>
-  <% Photo.all.each do |photo| %>
+<% if @photos.any? %>
+  <% @photos.each do |photo| %>
     <h2> <%= photo.name %> </h2>
     <h2> <%= photo.description %> </h2>
   <% end %>

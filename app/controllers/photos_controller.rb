@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
-    'No photos yet!'
+    @photos = Photo.all
   end
 
 end
