@@ -1,4 +1,4 @@
-# Pict [![Build Status](https://travis-ci.org/jameshamann/pict.svg?branch=master)](https://travis-ci.org/jameshamann/pict)
+# Pict [![Build Status](https://travis-ci.org/jameshamann/pict.svg?branch=master)](https://travis-ci.org/jameshamann/pict) [![Coverage Status](https://coveralls.io/repos/github/jameshamann/pict/badge.svg?branch=master)](https://coveralls.io/github/jameshamann/pict?branch=master)
 
 An Instagram Clone
 
