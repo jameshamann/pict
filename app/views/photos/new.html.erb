@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<h1>Share your expereinces</h1>
+
+<%= form_for @photo, url: photos_path do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.file_field :avatar %>
+<%= f.submit %>
+<% end %>
