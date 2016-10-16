@@ -37,13 +37,14 @@ group :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'rake'
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'coveralls', require: false
-  gem 'simplecov' 
+  gem 'simplecov'
 end
 
 group :development do
