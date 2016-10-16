@@ -1,10 +1,10 @@
 language: ruby
 
 rvm:
-  -2.3.1
+  - 2.3.1
 
   services:
-  -postgresql
+  - postgresql
 
 before_script:
-  -psql -c 'create database pict_test;' -U postgres
+  - psql -c 'create database pict_test;' -U postgres
