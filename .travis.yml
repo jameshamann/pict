@@ -2,6 +2,6 @@ language: ruby
 
 rvm:
 
-- 2.3.1-p112
+- 2.3
 - jruby
 - rbx 2
