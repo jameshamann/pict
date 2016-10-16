@@ -27,7 +27,7 @@ feature 'photos' do
       expect(current_path).to eq '/photos/new'
       fill_in 'Name', with: 'Loving life'
       fill_in 'Description', with: 'Such a nice afternoon'
-      attach_file "photo_avatar", '/Users/James/Documents/Makers/Course/Weekend_Challenges/Pict/public/Glitch.jpg'
+      attach_file "photo_avatar", './public/Glitch.jpg'
       click_button 'Create Photo'
       expect(current_path).to eq '/photos'
       expect(page).to have_content 'Loving life'
