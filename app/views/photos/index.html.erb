@@ -8,9 +8,10 @@
   <% @photos.each do |photo| %>
     <h2> <%= photo.name %> </h2>
     <h2> <%= photo.description %> </h2>
+         <%= image_tag(photo.avatar.url(:medium)) %>
   <% end %>
   <% else %>
   <h1>No photos yet!</h1>
   <% end %>
 
-  <a href="#">Upload a photo</a>
+  <a href="/photos/new">Upload a photo</a>

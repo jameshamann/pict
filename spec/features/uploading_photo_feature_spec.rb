@@ -19,4 +19,18 @@ feature 'photos' do
       expect(page).not_to have_content('No photos yet!')
     end
   end
+
+  context 'Creating and uploading photos' do
+    scenario 'a visitor can fill out a form, upload a photo and display the uploaded photo' do
+      visit '/photos'
+      click_link 'Upload a photo'
+      expect(current_path).to eq '/photos/new'
+      fill_in 'Name', with: 'Loving life'
+      fill_in 'Description', with: 'Such a nice afternoon'
+      attach_file "photo_avatar", '/Users/James/Documents/Makers/Course/Weekend_Challenges/Pict/public/Glitch.jpg'
+      click_button 'Create Photo'
+      expect(current_path).to eq '/photos'
+      expect(page).to have_content 'Loving life'
+    end
+  end
 end
