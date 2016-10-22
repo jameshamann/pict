@@ -5,10 +5,10 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-# if !Rails.env.production?
+if !Rails.env.production?
 require 'rspec/core/rake_task'
 
   RSpec::Core::RakeTask.new :spec
 
   task default: [:spec]
-# end
+end
