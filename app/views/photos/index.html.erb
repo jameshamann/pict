@@ -5,7 +5,9 @@
 <h2>Share your experiences!</h2>
 
 <% if @photos.any? %>
-  <% @photos.each do |photo| %>
+  <% @photos.each do |photo, index| %>
+
+  <b> <%= link_to "View photo", photo_path(photo)%></b>
     <h2> <%= photo.name %> </h2>
     <h2> <%= photo.description %> </h2>
          <%= image_tag(photo.avatar.url(:medium)) %>
