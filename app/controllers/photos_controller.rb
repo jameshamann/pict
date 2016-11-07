@@ -18,6 +18,16 @@ class PhotosController < ApplicationController
     @image_url = @photo.avatar.url(:medium)
   end
 
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    @photo.update(photo_params)
+    redirect_to "/photos/#{@photo.id}"
+  end
+
   private
 
   def photo_params
