@@ -13,6 +13,11 @@ class PhotosController < ApplicationController
     redirect_to photos_url
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+    @image_url = @photo.avatar.url(:medium)
+  end
+
   private
 
   def photo_params
