@@ -1,0 +1,13 @@
+current directory: /Users/jameshamann/Documents/Dev_Work/pict/vendor/cachebundle/ruby/2.3.0/gems/json-2.0.2/ext/json
+/Users/jameshamann/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20161107-60423-101nrjs.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jameshamann/Documents/Dev_Work/pict/vendor/cachebundle/ruby/2.3.0/gems/json-2.0.2/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/jameshamann/Documents/Dev_Work/pict/vendor/cachebundle/ruby/2.3.0/gems/json-2.0.2/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/jameshamann/Documents/Dev_Work/pict/vendor/cachebundle/ruby/2.3.0/gems/json-2.0.2/ext/json
+make "DESTDIR=" install
