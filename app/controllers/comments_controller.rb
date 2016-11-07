@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   def index
     @photo = Photo.find(params[:photo_id])
     @comments = Comment.where(photo_id: params[:photo_id])
+    @image_url = @photo.avatar.url(:medium)
   end
 
   def new
@@ -18,11 +19,6 @@ class CommentsController < ApplicationController
     else
       redirect_to new_photo_comment_path
     end
-  end
-
-  def show
-    @photo = Photo.find(params[:photo_id])
-    @comment = Comment.find(params[:id])
   end
 
   private

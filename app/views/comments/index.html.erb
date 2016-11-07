@@ -1,5 +1,11 @@
 <h2>Comments</h2>
 
+<h3>Name: <%= @photo.name %></h3>
+<h4>Description  <%= @photo.description %></h4>
+
+<%= image_tag(@image_url) %>
+
+
 <% if @comments.any? %>
   <% @comments.each do |comment| %>
     <h2> Comment: <%= comment.comment%> </h2>
