@@ -8,7 +8,7 @@ def upload_photo
   click_button 'Create Photo'
 end
 
-def visit_photo
+def visit_photo(photo)
   visit '/photos'
   click_link('View photo')
 end
