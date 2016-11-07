@@ -8,3 +8,5 @@
 <%= f.file_field :avatar %>
 <%= f.submit %>
 <% end %>
+
+<%= link_to "Delete #{@photo.name}", photo_path(@photo), method: :delete %>

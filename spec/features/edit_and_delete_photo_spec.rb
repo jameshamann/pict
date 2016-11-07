@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'photos' do
 
-  context 'deleting photos' do
+  context 'editing and deleting photos' do
 
     let!(:photo){Photo.create(name: "Test", description: "Test_Description")}
 
@@ -20,6 +20,14 @@ feature 'photos' do
       expect(current_path).to eq "/photos/#{photo.id}"
       expect(page).to have_content("Turfy!")
 
+    end
+
+    scenario 'a visitor can delete a photo' do
+      visit_photo(photo)
+      click_link("Edit #{photo.name}")
+      click_link("Delete #{photo.name}")
+      expect(current_path).to eq '/photos'
+      expect(page).to_not have_content("Test")
     end
 
   end
