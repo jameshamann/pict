@@ -23,8 +23,8 @@ feature 'photos' do
   context 'Creating and uploading photos' do
     scenario 'a visitor can fill out a form, upload a photo and display the uploaded photo' do
     upload_photo
-      expect(current_path).to eq '/photos'
-      expect(page).to have_content 'Loving life'
+    expect(current_path).to eq '/photos'
+    expect(page).to have_content 'Loving life'
     end
   end
 end

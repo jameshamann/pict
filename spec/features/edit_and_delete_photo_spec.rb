@@ -14,12 +14,11 @@ feature 'photos' do
     scenario 'a visitor can edit a photo' do
       visit_photo(photo)
       click_link("Edit #{photo.name}")
-      fill_in 'Name', with: "Turfy!"
-      fill_in 'Description', with: "Awesome app"
+      fill_in 'Name', with: 'Turfy!'
+      fill_in 'Description', with: 'Awesome app'
       click_button("Update Photo")
       expect(current_path).to eq "/photos/#{photo.id}"
-      expect(page).to have_content("Turfy!")
-
+      expect(page).to have_content('Turfy!')
     end
 
     scenario 'a visitor can delete a photo' do
@@ -27,10 +26,7 @@ feature 'photos' do
       click_link("Edit #{photo.name}")
       click_link("Delete #{photo.name}")
       expect(current_path).to eq '/photos'
-      expect(page).to_not have_content("Test")
+      expect(page).to_not have_content('Test')
     end
-
   end
-
-
 end
