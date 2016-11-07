@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 feature 'photos' do
-
   context 'editing and deleting photos' do
-
-    let!(:photo){Photo.create(name: "Test", description: "Test_Description")}
+    let!(:photo) {Photo.create(name: 'Test', description: 'Test_Description') }
 
     scenario 'a visitor can visit a specific photo' do
       visit_photo(photo)
