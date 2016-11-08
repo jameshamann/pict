@@ -11,6 +11,8 @@ gem 'dotenv-rails'
 
 gem 'paperclip'
 
+gem 'devise'
+
 gem 'travis'
 # Use postgresql as the database for Active Record
 gem 'pg'
