@@ -21,6 +21,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @photo = Photo.find(params[:photo_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:photo_id])
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    redirect_to "/photos/#{@photo.id}/comments"
+  end
+
   private
 
   def comment_params

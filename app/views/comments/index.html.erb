@@ -9,6 +9,7 @@
 <% if @comments.any? %>
   <% @comments.each do |comment| %>
     <h2> Comment: <%= comment.comment%> </h2>
+    <%= link_to "Edit comment", edit_photo_comment_path(@photo, comment) %>
   <% end %>
   <% else %>
   <h1>No comments yet!</h1>

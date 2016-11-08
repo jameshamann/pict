@@ -12,3 +12,14 @@ def visit_photo(photo)
   visit '/photos'
   click_link('View photo')
 end
+
+def visit_edit_comment(photo, comment)
+  visit "photos/#{photo.id}/comments"
+  click_link 'Edit comment'
+end
+
+
+def add_comment(comment)
+  fill_in :comment_comment, with: comment.comment
+  click_button 'Create Comment'
+end
