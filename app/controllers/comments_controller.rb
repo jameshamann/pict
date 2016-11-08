@@ -21,6 +21,25 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @photo = Photo.find(params[:photo_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:photo_id])
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    redirect_to photo_comments_path
+  end
+
+  def destroy
+    @photo = Photo.find(params[:photo_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to photo_comments_path
+  end
+
   private
 
   def comment_params
