@@ -6,3 +6,5 @@
 <%= f.hidden_field :photo_id, value: @photo.id %>
 <%= f.submit %>
 <% end %>
+
+<%= link_to "Delete comment", photo_comment_path(@photo, @comment), method: :delete %>

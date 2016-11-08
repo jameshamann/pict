@@ -15,5 +15,13 @@ feature 'editing comments' do
       expect(current_path).to eq "/photos/#{photo.id}/comments"
       expect(page).to have_content 'Great test!'
     end
+
+    scenario 'a visitor can delete a comment' do
+      visit "/photos/#{photo.id}/comments"
+      click_link 'Edit comment'
+      click_link 'Delete comment'
+      expect(current_path).to eq "/photos/#{photo.id}/comments"
+      expect(page).to_not have_content 'Great test!'
+    end
   end
 end

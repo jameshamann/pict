@@ -30,7 +30,14 @@ class CommentsController < ApplicationController
     @photo = Photo.find(params[:photo_id])
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
-    redirect_to "/photos/#{@photo.id}/comments"
+    redirect_to photo_comments_path
+  end
+
+  def destroy
+    @photo = Photo.find(params[:photo_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to photo_comments_path
   end
 
   private
