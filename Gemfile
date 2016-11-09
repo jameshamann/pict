@@ -9,6 +9,8 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'omniauth-facebook'
+
 gem 'paperclip'
 
 gem 'devise'
