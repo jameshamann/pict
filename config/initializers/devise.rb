@@ -12,7 +12,12 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
+  config.secret_key = ENV["DEVISE_SECRET_KEY"]
+
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+
+  config.omniauth :facebook, Rails.application.secrets.facebook_app_id,
+                  Rails.application.secrets.facebook_app_secret
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
