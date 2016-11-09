@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 feature 'photos' do
+
+  before do
+    sign_up
+  end
+
   context 'no photo\'s have been added' do
     scenario 'should display a link for visitors to add photos' do
       visit '/photos'
