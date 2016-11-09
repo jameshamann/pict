@@ -11,4 +11,8 @@ class User < ApplicationRecord
     user.name = auth.info.name   # assuming the user model has a name
    end
  end
+
+ has_many :comments, dependent: :destroy
+ has_many :photos, dependent: :destroy
+
 end
