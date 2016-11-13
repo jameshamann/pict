@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   root "photos#index"
 
   resources :photos do
+    member do
+
+    put "like", to: "photos#upvote"
+    put "dislike", to: "photos#downvote"
+
+    end
+
     resources :comments do
 
     end
   end
-
 end
