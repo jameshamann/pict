@@ -1,8 +1,7 @@
 
 def upload_photo
   visit '/photos'
-  click_link 'Upload a photo'
-  expect(current_path).to eq '/photos/new'
+  click_link 'Upload photos'
   fill_in 'Name', with: 'Loving life'
   fill_in 'Description', with: 'Such a nice afternoon'
   click_button 'Create Photo'
@@ -10,7 +9,7 @@ end
 
 def visit_photo(photo)
   visit '/photos'
-  click_link('View photo')
+  click_link("#{photo.name}")
 end
 
 def visit_edit_comment(photo, comment)
@@ -39,14 +38,4 @@ def sign_in(email: "test@example.com", password: "12345678")
   fill_in('user_email', with: email)
   fill_in('user_password', with: password)
   click_button('Log in')
-end
-
-def upvote
-  visit '/photos'
-  click_link 'Upvote'
-end
-
-def downvote
-  visit '/photos'
-  click_link 'Downvote'
 end

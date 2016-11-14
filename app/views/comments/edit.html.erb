@@ -1,10 +1,19 @@
-<h2>Edit your comment!</h2>
+<div class="container">
 
-<%= form_for [@photo, @comment] do |f| %>
-<%= f.label :comment %>
-<%= f.text_field :comment %>
-<%= f.hidden_field :photo_id, value: @photo.id %>
-<%= f.submit %>
-<% end %>
+    <h2>Edit your comment</h2>
+    <br>
 
-<%= link_to "Delete comment", photo_comment_path(@photo, @comment), method: :delete %>
+
+
+  <%= form_for [@photo, @comment] do |f| %>
+  <div class="form-group row">
+    <label for="name" class="col-xs-2 col-form-label"><%= f.label :comment %></label>
+       <div class="col-xs-10" id="name" placeholder="Edit photo name">
+         <%= f.text_field :comment, class: 'form-control' %>
+       </div>
+     </div>
+      <%= f.hidden_field :photo_id, value: @photo.id %>
+      <p><%= f.submit %></p>
+      <p><button><%= link_to "Delete comment", photo_comment_path(@photo, @comment), method: :delete %></button></p>
+  <% end %>
+</div>

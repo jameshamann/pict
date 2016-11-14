@@ -17,6 +17,7 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def show
     @photo = Photo.find(params[:id])
+    @comments = Comment.where(photo_id: params[:photo_id])
     @image_url = @photo.avatar.url(:medium)
   end
 
