@@ -1,16 +1,22 @@
-<h2>Comments</h2>
+<div class="container">
 
-<h3>Name: <%= @photo.name %></h3>
-<h4>Description  <%= @photo.description %></h4>
+  <h2>Comments</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+  <h4><%= link_to "#{@photo.name}", photo_path(@photo) %></h4>
+</div>
+  <div class="panel-body">
+  <p><b>Description</b></p>
+    <p><%= @photo.description %></p>
+    <p><%= image_tag(@image_url) %></p>
 
-<%= image_tag(@image_url) %>
-
-
-<% if @comments.any? %>
-  <% @comments.each do |comment| %>
-    <h2> Comment: <%= comment.comment%> </h2>
-    <%= link_to "Edit comment", edit_photo_comment_path(@photo, comment) %>
-  <% end %>
-  <% else %>
-  <h1>No comments yet!</h1>
-  <% end %>
+  <% if @comments.any? %>
+    <% @comments.each do |comment| %>
+      <p> Comment: <%= comment.comment%> <p>
+      <p><%= link_to "Edit comment", edit_photo_comment_path(@photo, comment) %></p>
+    <% end %>
+    <% else %>
+  </div>
+    <h1>No comments yet!</h1>
+    <% end %>
+  </div>
