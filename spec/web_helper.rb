@@ -39,11 +39,3 @@ def sign_in(email: "test@example.com", password: "12345678")
   fill_in('user_password', with: password)
   click_button('Log in')
 end
-
-def upvote
-  find_button('like').click
-end
-
-def downvote
-  click_on 'dislike'
-end
