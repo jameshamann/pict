@@ -1,7 +1,7 @@
 
 def upload_photo
   visit '/photos'
-  click_link 'Upload a photo'
+  click_link 'Upload photos'
   expect(current_path).to eq '/photos/new'
   fill_in 'Name', with: 'Loving life'
   fill_in 'Description', with: 'Such a nice afternoon'

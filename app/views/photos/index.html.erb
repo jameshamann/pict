@@ -1,32 +1,39 @@
 <!DOCTYPE HTML>
 
+<div class="container">
+
 <h1>Pict</h1>
 
 <h2>Share your experiences!</h2>
 
 <% if @photos.any? %>
   <% @photos.each do |photo, index| %>
-
-  <div class="row">
-
-  <b> <%= link_to "View photo", photo_path(photo)%></b>
-    <h2> <%= photo.name %> </h2>
-    <h2> <%= photo.description %> </h2>
-         <%= image_tag(photo.avatar.url(:medium)) %>
-        <%= link_to like_photo_path(photo), method: :put do %>
-        Upvote
-        <%= photo.get_upvotes.size %>
-        <% end %>
-
-        <%= link_to dislike_photo_path(photo), method: :put do %>
-        Downvote
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <b><%= link_to "#{photo.name}", photo_path(photo)%></b>
+      </div>
+  <div class="panel-body">
+    <p> <%= photo.description %></p>
+    <p><%= image_tag(photo.avatar.url(:medium)) %></p>
+    <p><%= link_to like_photo_path(photo), method: :put do %>
+      <button type="button" class="btn btn-default" aria-label="Thumbs Up">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      <%= photo.get_upvotes.size %>
+    </button>
+    <% end %>
+  </p>
+    <p>
+      <%= link_to dislike_photo_path(photo), method: :put do %>
+        <button type="button" class="btn btn-default" aria-label="Thumbs Down">
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
         <%= photo.get_downvotes.size %>
+          </button>
         <% end %>
+      </p>
+      </div>
+    </div>
   <% end %>
   <% else %>
   <h1>No photos yet!</h1>
   <% end %>
-
-
-
-  <a href="/photos/new">Upload a photo</a>
+</div>

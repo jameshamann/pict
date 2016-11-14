@@ -22,10 +22,11 @@
             <span class="glyphicon glyphicon-camera"></span>
           </a>
         </div>
-          <ul class="nav navbar-nav navbar-left">
+          <ul class="nav navbar-nav navbar-center">
             <% if user_signed_in? %>
-              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-              <li><%= "Signed in as: #{current_user.email}" %></li>
+              <li>Signed in as: <%= current_user.email %></li>
+               <li><a href="/photos/new">Upload photos</a></li>
+               <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Sign in", new_user_session_path %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -34,7 +35,6 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
            <ul class="nav navbar-nav">
-             <li><a href="/photos/new">Add Photos</a></li>
              <li><a href="/photos">View Photos</a></li>
            </ul>
       <%= yield %>
