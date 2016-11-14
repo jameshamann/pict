@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 
+<div class="container">
+
+  <% if @photo.errors.any? %>
+    <section id="errors">
+      <h2> <%= pluralize(@photo.errors.count, "error") %> prohibited this restaurant from being saved: </h2>
+      <ul>
+        <% @photo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+
 <h1>Share your expereinces</h1>
+<br>
 
 <%= form_for @photo, url: photos_path do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :description %>
-<%= f.text_field :description %>
-<%= f.file_field :avatar %>
-<%= f.submit %>
-<% end %>
+<div class="form-group row">
+  <label for="name" class="col-xs-2 col-form-label">  <%= f.label :name %></label>
+    <div class="col-xs-10" id="name">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-xs-2 col-form-label">  <%= f.label :description %></label>
+      <div class="col-xs-10" id="name">
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+    </div>
+  <p><%= f.file_field :avatar %></p>
+  <p><%= f.submit %></p>
+  <% end %>
+</div>
