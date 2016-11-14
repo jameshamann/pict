@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 
-<h1>Pict</h1>
-
-<h3>Name: <%= @photo.name %></h3>
-<h4>Description  <%= @photo.description %></h4>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-9">
+          <h4>Name: <%= @photo.name %></h4>
+        </div>
+        <div class="panel-body">
+          <h4>Description  <%= @photo.description %></h4>
 
 <%= link_to "Edit #{@photo.name}", edit_photo_path(@photo) %>
 
@@ -12,3 +17,5 @@
 <%= link_to "View comments", photo_comments_path(@photo) %>
 
 <%= image_tag(@image_url) %>
+
+</div>

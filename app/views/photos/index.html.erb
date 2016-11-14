@@ -16,7 +16,7 @@
     <p> <%= photo.description %></p>
     <p><%= image_tag(photo.avatar.url(:medium)) %></p>
     <p><%= link_to like_photo_path(photo), method: :put do %>
-      <button type="button" class="btn btn-default" aria-label="Thumbs Up">
+      <button id="like" type="button" class="like">
         <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
       <%= photo.get_upvotes.size %>
     </button>
@@ -24,7 +24,7 @@
   </p>
     <p>
       <%= link_to dislike_photo_path(photo), method: :put do %>
-        <button type="button" class="btn btn-default" aria-label="Thumbs Down">
+        <button id="dislike" type="button" class="dislike">
           <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
         <%= photo.get_downvotes.size %>
           </button>
