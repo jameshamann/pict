@@ -1,23 +1,44 @@
 <!DOCTYPE html>
+
 <html>
   <head>
-    <title>Pict</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" type="text/css">
   </head>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <span class="glyphicon glyphicon-camera"></span>
+          </a>
+        </div>
+          <ul class="nav navbar-nav navbar-left">
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              <li><%= "Signed in as: #{current_user.email}" %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+          <% end %>
 
-  <body><% if user_signed_in? %>
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <%= "Signed in as: #{current_user.email}" %>
-  <% else %>
-  <%= link_to "Sign in", new_user_session_path %>
-  <%= link_to "Sign up", new_user_registration_path %>
-  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-<% end %>
-    <a href="/photos/new">Add Photos</a>
-      <a href="/photos">View Photos</a>
-    <%= yield %>
-  </body>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav">
+             <li><a href="/photos/new">Add Photos</a></li>
+             <li><a href="/photos">View Photos</a></li>
+           </ul>
+      <%= yield %>
+    </div>
+  </div>
+  </nav>
 </html>

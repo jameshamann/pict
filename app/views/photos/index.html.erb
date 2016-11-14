@@ -7,6 +7,8 @@
 <% if @photos.any? %>
   <% @photos.each do |photo, index| %>
 
+  <div class="row">
+
   <b> <%= link_to "View photo", photo_path(photo)%></b>
     <h2> <%= photo.name %> </h2>
     <h2> <%= photo.description %> </h2>
@@ -24,5 +26,7 @@
   <% else %>
   <h1>No photos yet!</h1>
   <% end %>
+
+
 
   <a href="/photos/new">Upload a photo</a>
