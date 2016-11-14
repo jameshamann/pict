@@ -11,6 +11,10 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'omniauth-facebook'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
+gem 'shoulda'
+
 gem 'paperclip'
 
 gem 'devise'
