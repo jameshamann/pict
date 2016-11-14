@@ -40,3 +40,13 @@ def sign_in(email: "test@example.com", password: "12345678")
   fill_in('user_password', with: password)
   click_button('Log in')
 end
+
+def upvote
+  visit '/photos'
+  click_link 'Upvote'
+end
+
+def downvote
+  visit '/photos'
+  click_link 'Downvote'
+end

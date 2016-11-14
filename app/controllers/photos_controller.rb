@@ -39,13 +39,13 @@ before_action :authenticate_user!, :except => [:index, :show]
   def upvote
     @photo = Photo.find(params[:id])
     @photo.upvote_by current_user
-    redirect_to :back
+    redirect_to root_path
   end
 
   def downvote
     @photo = Photo.find(params[:id])
     @photo.downvote_by current_user
-    redirect_to :back
+    redirect_to root_path
   end
 
   private
