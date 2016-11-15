@@ -17,6 +17,8 @@ gem 'shoulda'
 
 gem 'paperclip'
 
+gem 'aws-sdk', '~> 2.3'
+
 gem 'devise'
 
 gem 'travis'
