@@ -7,6 +7,17 @@ Rails.application.configure do
 
   Paperclip.options[:command_path] = "/usr/local/bin/convert/"
 
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_host_name: "s3-eu-west-1.amazonaws.com",
+  s3_credentials: {
+    bucket: ENV.fetch('S3_BUCKET_NAME'),
+    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+    secret_access_key: ENV.fetch('AWS_SECRET_KEY'),
+    s3_region: ENV.fetch('AWS_REGION'),
+  }
+}
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
