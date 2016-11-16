@@ -1,9 +1,9 @@
 
-def upload_photo
+def upload_photo(name: "Loving life", description: 'Such a nice afternoon')
   visit '/photos'
   click_link 'Upload photos'
-  fill_in 'Name', with: 'Loving life'
-  fill_in 'Description', with: 'Such a nice afternoon'
+  fill_in 'Name', with: name
+  fill_in 'Description', with: description
   click_button 'Create Photo'
 end
 
@@ -19,7 +19,7 @@ end
 
 
 def add_comment(comment)
-  fill_in :comment_comment, with: comment.comment
+  fill_in :comment_comment, with: comment
   click_button 'Create Comment'
 end
 

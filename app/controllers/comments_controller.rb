@@ -14,16 +14,19 @@ class CommentsController < ApplicationController
   def create
     @photo = Photo.find(params[:photo_id])
     @comment = @photo.comments.new(comment_params)
+    @comment.user = current_user
     if @comment.save
       redirect_to photo_comments_path
+      flash[:notice] = "Comment added!"
     else
       redirect_to new_photo_comment_path
+      flash[:alert] = "Sorry you cannot add an empty comment"
     end
   end
 
   def edit
-    @photo = Photo.find(params[:photo_id])
     @comment = Comment.find(params[:id])
+    @photo = Photo.find(params[:photo_id])
   end
 
   def update

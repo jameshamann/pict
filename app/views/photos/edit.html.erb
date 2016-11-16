@@ -20,6 +20,8 @@
      </div>
     <p>  <%= f.file_field :avatar %></p>
       <p><%= f.submit %></p>
-      <p><button><%= link_to "Delete #{@photo.name}", photo_path(@photo), method: :delete %></button></p>
+      <% if (current_user.id == @photo.user_id)%>
+        <p><%= link_to "Delete #{@photo.name}", photo_path(@photo), method: :delete %></p>
+        <% end %>
   <% end %>
 </div>
