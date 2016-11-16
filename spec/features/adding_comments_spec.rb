@@ -9,13 +9,9 @@ feature 'comments' do
       click_link('Add comment')
       expect(current_path).to eq "/photos/#{photo.id}/comments/new"
       expect(page).to have_content('Add comment!')
-      add_comment(comment)
+      add_comment(comment.comment)
       expect(current_path).to eq "/photos/#{photo.id}/comments"
       expect(page).to have_content('Comment: Looking good!')
-
     end
-
   end
-
-
 end

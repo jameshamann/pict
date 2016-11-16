@@ -8,7 +8,7 @@
 </head>
 
 <% if @photos.any? %>
-  <% @photos.each do |photo, index| %>
+  <% @photos.each do |photo| %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <b><%= link_to "#{photo.name}", photo_path(photo)%></b>

@@ -12,8 +12,10 @@
 
   <% if @comments.any? %>
     <% @comments.each do |comment| %>
-      <p> Comment: <%= comment.comment%> <p>
-      <p><%= link_to "Edit comment", edit_photo_comment_path(@photo, comment) %></p>
+      <p>Comment: <%=comment.comment%> <p>
+        <% if current_user && current_user.id == comment.user_id %>
+      <small><%= link_to "Edit #{comment.comment}", edit_photo_comment_path(@photo, comment) %></small>
+      <% end %>
     <% end %>
     <% else %>
   </div>

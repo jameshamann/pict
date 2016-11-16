@@ -12,7 +12,12 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def create
     @photo = Photo.create(photo_params)
-    redirect_to photos_url
+    @photo.user = current_user
+    if @photo.save
+      redirect_to photos_path
+    else
+      render "new"
+    end
   end
 
   def show
@@ -33,8 +38,11 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def destroy
     @photo = Photo.find(params[:id])
-    @photo.destroy
-    redirect_to photos_path
+    if current_user.id == @photo.user.id
+      @photo.destroy
+      flash[:notice] = "Photo deleted!"
+      redirect_to photos_path
+    end
   end
 
   def upvote
