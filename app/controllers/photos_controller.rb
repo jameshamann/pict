@@ -15,8 +15,10 @@ before_action :authenticate_user!, :except => [:index, :show]
     @photo.user = current_user
     if @photo.save
       redirect_to photos_path
+      flash[:notice] = "Photo successfully uploaded!"
     else
       render "new"
+      flash[:alert] = "Sorry, you must uploaded a valid photo with a valid name"
     end
   end
 
