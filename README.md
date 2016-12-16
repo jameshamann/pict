@@ -1,10 +1,11 @@
 # Pict [![Build Status](https://travis-ci.org/jameshamann/pict.svg?branch=master)](https://travis-ci.org/jameshamann/pict) [![Coverage Status](https://coveralls.io/repos/github/jameshamann/pict/badge.svg?branch=master)](https://coveralls.io/github/jameshamann/pict?branch=master)
 
-An Instagram Clone
+Pict is an Instagram clone built in Rails, you can view the project by clicking [here](https://pict-app.herokuapp.com/).
 
-This README will be updated through the development of this application.
 
 ## User Stories
+
+These were the original user stories that I created, most are completed, however some are yet to be implemented.
 
 ```
 As a user,
@@ -41,35 +42,12 @@ I would like to tag the location of a photo.
 
 ```
 
-## Version 1 - MVP
+## Built using
 
-The initial version would focus on the core functionality of the site.
+- [Ruby on Rails](http://rubyonrails.org/)
+- [RSpec](http://rspec.info/)
+- [Capybara](http://teamcapybara.github.io/capybara/)
 
-- Visitors can upload a new photo, with a form specifying a title and brief description.
-- Photos can be deleted and edited
-- Visitors can leave comments for photos
-- Visitors can 'like' or '+ 1' photos
-- The photos listings page should display all photos that have been uploaded
-- Validations for name of photo as well as comments (no empty forms will be submitted)
+## Authors
 
-## Version 2 - Adding User Login
-
-The second version will focus around adding unique users to the application.
-
-- Users can Sign up and Login
-- The user should be notified if they are signed in and this should be made visible on a page.
-- The users username should be displayed as part of the comments
-
-## Version 3 - Setting limits on Users
-
-The third iteration will focus around linking users to their photos, comments and likes.
-
-- A user must be logged in to upload a photo
-- Users can only edit photos they have uploaded
-- Users can delete their own comments
-- Users are able to unlike a photo
-
-## Version 4 - Adding Locations and Further Features
-
-- Geo tagging
-- Creating user profile
+[James Hamann](www.jameshamann.com)
