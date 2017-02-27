@@ -184,7 +184,7 @@ GEM
       activemodel (= 5.0.0.1)
       activerecord (= 5.0.0.1)
       activesupport (= 5.0.0.1)
-      bundler (= 1.13.6)
+      bundler (= 1.14.5)
       railties (= 5.0.0.1)
       sprockets-rails (>= 2.0.0)
     rails-dom-testing (2.0.1)
@@ -326,7 +326,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.3.0p0
 
 BUNDLED WITH
-   1.13.6
+   1.14.5
